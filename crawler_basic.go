@@ -10,10 +10,12 @@ import (
 	"golang.org/x/net/html"
 )
 
+// GetListOfURL returns list or URL on a page
 func GetListOfURL(link string) ([]string, error) {
 	client := &http.Client{
 		Timeout: 10 * time.Second,
 	}
+
 	resp, err := client.Get(link)
 	if err != nil {
 		return nil, err

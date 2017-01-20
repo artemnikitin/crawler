@@ -13,7 +13,7 @@ func main() {
 		log.Fatal("Can't extract URL from page ", err)
 	}
 
-	fmt.Println("Page http://google.com contains next URL:")
+	fmt.Println("Page http://google.com contains next URLs:")
 	for _, v := range urls {
 		fmt.Println(v)
 	}

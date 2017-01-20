@@ -14,9 +14,9 @@ func TestParseHTML(t *testing.T) {
 	}{
 		{"empty string", strings.NewReader(""), 0},
 		{"not HTML", strings.NewReader("3f323grgrf2frfr4"), 0},
-		{"invalid HTML", strings.NewReader(InvalidHTML), 0},
-		{"valid HTML", strings.NewReader(ValidHTML), ValidLinks},
-		{"valid HTML without URL", strings.NewReader(ValidHTMLNoURL), 0},
+		{"invalid HTML", strings.NewReader(invalidHTML), 0},
+		{"valid HTML", strings.NewReader(validHTML), validLinks},
+		{"valid HTML without URL", strings.NewReader(validHTMLNoURL), 0},
 	}
 
 	for _, v := range cases {
