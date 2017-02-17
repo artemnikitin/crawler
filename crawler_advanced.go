@@ -11,6 +11,7 @@ import (
 
 // GetListOfURLWithDepth returns list of all URL with specified depth of crawling
 func GetListOfURLWithDepth(link string, depth int) ([]string, error) {
+	var resmap map[string]string
 	var result []string
 	var temp []string
 	var temp2 []string
@@ -61,6 +62,15 @@ func GetListOfURLWithDepth(link string, depth int) ([]string, error) {
 		temp = temp2
 		temp2 = make([]string, 0)
 		result = append(result, temp...)
+	}
+
+	resmap = make(map[string]string, 0)
+	for _, v := range result {
+		resmap[v] = v
+	}
+	result = make([]string, 0)
+	for k := range resmap {
+		result = append(result, k)
 	}
 
 	return result, nil
