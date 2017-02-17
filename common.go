@@ -20,7 +20,7 @@ func parseHTML(body io.Reader, baseURL string) ([]string, error) {
 		if node.Type == html.ElementNode && node.Data == "a" {
 			for _, v := range node.Attr {
 				if v.Key == "href" {
-					if strings.HasPrefix(v.Val, "http") {
+					if strings.HasPrefix(v.Val, "http") || strings.HasPrefix(v.Val, "//www.") {
 						result = append(result, v.Val)
 					} else {
 						result = append(result, baseURL+v.Val)
