@@ -14,4 +14,10 @@ func main() {
 	}
 
 	fmt.Println("Total # of URL:", len(urls))
+	if len(urls) <= 100 {
+		fmt.Println("URL:")
+		for _, v := range urls {
+			fmt.Println(v)
+		}
+	}
 }

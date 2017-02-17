@@ -59,7 +59,8 @@ func GetListOfURLWithDepth(link string, depth int) ([]string, error) {
 		wg.Wait()
 
 		temp = temp2
-		result = append(result, temp2...)
+		temp2 = make([]string, 0)
+		result = append(result, temp...)
 	}
 
 	return result, nil
