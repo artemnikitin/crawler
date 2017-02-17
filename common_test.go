@@ -17,6 +17,7 @@ func TestParseHTML(t *testing.T) {
 		{"invalid HTML", strings.NewReader(invalidHTML), 0},
 		{"valid HTML", strings.NewReader(validHTML), validLinks},
 		{"valid HTML", strings.NewReader(validHTMLWithURLWithoutHTTP), validLinks},
+		{"valid HTML with javascript", strings.NewReader(withJavascriptURL), validLinks},
 		{"valid HTML without URL", strings.NewReader(validHTMLNoURL), 0},
 	}
 
