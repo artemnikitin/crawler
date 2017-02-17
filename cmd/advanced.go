@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	urls, err := crawler.GetListOfURLWithDepth("http://google.com", 3)
+	urls, err := crawler.GetListOfURLWithDepth("https://www.facebook.com/", 3)
 	if err != nil {
 		log.Fatal("Can't extract URLs from page ", err)
 	}
