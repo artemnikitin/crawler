@@ -2,6 +2,8 @@ package crawler
 
 import (
 	"io"
+	"log"
+	"os"
 	"strings"
 
 	"golang.org/x/net/html"
@@ -41,4 +43,20 @@ func parseHTML(body io.Reader, baseURL string) ([]string, error) {
 	f(doc)
 
 	return result, nil
+}
+
+func WriteToFile(list []string, name string) {
+	file, err := os.Create(name)
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	defer file.Close()
+
+	for _, v := range list {
+		file.WriteString(v)
+		file.WriteString("\n")
+	}
+
+	file.Sync()
 }
