@@ -1,2 +1,2 @@
 # crawler
-Web crawler implemented in Go
+Example of web crawler implemented in Go
