@@ -1,0 +1,13 @@
+language: go
+
+go: 
+ - 1.7.5
+
+install:
+ - pwd #just for using vendored dependencies
+
+script:
+ - go test -race $(go list ./... | grep -v /vendor/)
+
+after_success:
+ - curl --request POST "https://goreportcard.com/checks" --data "repo=github.com/artemnikitin/crawler"
