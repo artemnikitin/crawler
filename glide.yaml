@@ -1,0 +1,6 @@
+package: github.com/artemnikitin/crawler
+import:
+- package: golang.org/x/net
+  version: 6b27048ae5e6ad1ef927e72e437531493de612fe
+  subpackages:
+  - html
