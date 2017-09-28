@@ -9,9 +9,9 @@ import (
 	"time"
 )
 
-// GetListOfURLWithLimitedConcurrency returns list of all URL with specified depth of crawling
+// Do returns list of all URL with specified depth of crawling
 // and allow to limit simultaneous number of goroutines
-func GetListOfURLWithLimitedConcurrency(link string, depth, ccy int) ([]string, error) {
+func Do(link string, depth, ccy int) ([]string, error) {
 	var result []string
 	client := &http.Client{
 		Timeout: 30 * time.Second,

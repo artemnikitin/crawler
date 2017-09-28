@@ -44,20 +44,3 @@ func parseHTML(body io.Reader, baseURL string) ([]string, error) {
 
 	return result, nil
 }
-
-// WriteToFile allows to write list of URL to file
-func WriteToFile(list []string, name string) {
-	file, err := os.Create(name)
-	if err != nil {
-		log.Println(err)
-		return
-	}
-	defer file.Close()
-
-	for _, v := range list {
-		file.WriteString(v)
-		file.WriteString("\n")
-	}
-
-	file.Sync()
-}
