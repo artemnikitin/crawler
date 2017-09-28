@@ -2,8 +2,6 @@ package crawler
 
 import (
 	"io"
-	"log"
-	"os"
 	"strings"
 
 	"golang.org/x/net/html"
