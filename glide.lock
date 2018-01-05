@@ -1,9 +1,0 @@
-hash: a769338dc40f02207e23e228696ae577647ad9d05720c59595cfd19ef5ee6922
-updated: 2017-02-23T21:12:10.979336265+01:00
-imports:
-- name: golang.org/x/net
-  version: 6b27048ae5e6ad1ef927e72e437531493de612fe
-  subpackages:
-  - html
-  - html/atom
-testImports: []
